@@ -81,25 +81,61 @@ foreach ($pengaduan as $Reportcancel) {
         <div class="x_panel tile fixed_height_320">
           <div class="x_title">
             <h2>Lokasi <?= $i ?></h2>
-            
+
             <div class="clearfix"></div>
           </div>
           <div class="x_content text-dark">
             <h4 class="" align="justify"><i class="fa fa-map-marker text-danger"> <b class="text-dark"></b></i> <b>Lokasi :</b> <?= $row['name_location'] ?></h4>
             <div class="row mt-4">
-              <div class="col-md-1 "><h4><i class="fa fa-tint" style="color: #479ceb;"></i></h4></div>
-              <div class="col-md-1 "><h4>:</h4></div>
-              <div class="col-md-3 "><h4><b class="text-dark"> <?= $row['water_level'] ?> M</b></h4></div>
+              <div class="col-md-1 ">
+                <h4><i class="fa fa-tint" style="color: #479ceb;"></i></h4>
+              </div>
+              <div class="col-md-1 ">
+                <h4>:</h4>
+              </div>
+              <div class="col-md-3 ">
+                <h4><b class="text-dark"> <?= $row['water_level'] ?> M</b></h4>
+              </div>
             </div>
             <div class="row mt-3">
-              <div class="col-md-1 "><h4><i class="fa fa-temperature-high" style="color: #ff2600;"></i></h4></div>
-              <div class="col-md-1 "><h4>:</h4></div>
-              <div class="col-md-3 "><h4><b class="text-dark"> <?= $row['temperature'] ?> C</b></h4></div>
+              <div class="col-md-1 ">
+                <h4><i class="fa fa-temperature-high" style="color: #ff2600;"></i></h4>
+              </div>
+              <div class="col-md-1 ">
+                <h4>:</h4>
+              </div>
+              <div class="col-md-3 ">
+                <h4><b class="text-dark"> <?= $row['temperature'] ?> C</b></h4>
+              </div>
             </div>
             <div class="row mt-3">
-              <div class="col-md-1 "><h4><i class="fa-brands fa-font-awesome" style="color: #ff2600;"></i></h4></div>
-              <div class="col-md-1 "><h4>:</h4></div>
-              <div class="col-md-3 "><h4><b class="text-dark"> <?= $row['state'] ?></b></h4></div>
+              <div class="col-md-1 ">
+                <?php if ($row['state'] == 'AMAN') : ?>
+
+                  <h4><i class="fa-brands fa-font-awesome text-success" style="color: #ff2600;"></i></h4>
+                <?php elseif ($row['state'] == 'WASPADA') : ?>
+                  <h4><i class="fa-brands fa-font-awesome text-warning" style="color: #ff2600;"></i></h4>
+                <?php else : ?>
+                  <h4><i class="fa-brands fa-font-awesome text-danger" style="color: #ff2600;"></i></h4>
+
+                <?php endif ?>
+              </div>
+              <div class="col-md-1 ">
+                <h4>:</h4>
+              </div>
+              <div class="col-md-3 ">
+                <?php if ($row['state'] == 'AMAN') : ?>
+                  <h4><b class="text-success"><?= $row['state'] ?></b></h4>
+                <?php elseif ($row['state'] == 'WASPADA') : ?>
+
+                  <h4><b class="text-warnign"><?= $row['state'] ?></b></h4>
+                <?php else : ?>
+
+                  <h4><b class="text-danger"><?= $row['state'] ?></b></h4>
+
+
+                <?php endif ?>
+              </div>
             </div>
           </div>
         </div>

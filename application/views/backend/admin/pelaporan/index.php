@@ -67,8 +67,8 @@ if (validation_errors()) {
                         <td><?= date('d   F   Y,  h:i:s', $row['timestamp']) ?></td>
                         <td><?= $row['name'] ?></td>
                         <td><?= $row['phone'] ?></td>
-                        <td><button type="button" class="<?= $buttonColor ?> rounded btn-lg btn-block"  data-toggle="modal" data-target="#pengaduan<?= $row['report_number'] ?>">
-                           <b><?= $text ?></b>  <i class="fa fa-ellipsis-v p-1"></i>
+                        <td><button type="button" class="<?= $buttonColor ?> rounded btn-lg btn-block" data-toggle="modal" data-target="#pengaduan<?= $row['report_number'] ?>">
+                            <b><?= $text ?></b> <i class="fa fa-ellipsis-v p-1"></i>
                           </button>
                         </td>
                       </tr>
