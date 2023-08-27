@@ -13,7 +13,7 @@ class Admin extends CI_Controller
     //* load helper clogin
     check_login();
   }
-
+// tes commit
   public function index()
   {
     $data['title'] = 'Dashboard';
